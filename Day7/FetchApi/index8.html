@@ -8,9 +8,9 @@
 </head>
 <body>
     <section>
-    <h1>Register</h1>
+    <div class="reg"> Register </div>
 
-    <h6>Create your account. Its free and only takes a minute</h6>
+    <p>Create your account. Its free and only takes a minute</p>
 
     <form class="form">
 
@@ -22,18 +22,24 @@
 
     </div>
 
+    <div class="input">
     <input class="email" type="email" placeholder="Email"><br>
 
     <input class="password" type="password" placeholder="Password"><br>
 
     <input class="cpassword" type="password" placeholder="Confirm Password">
 
-    <div class="checkbox"><input type="checkbox"> I accept the Terms of Use & Privacy Policy</div>
+    </div>
 
-    <button class="register" type="submit">Register Now</button>
+    <div class="checkbox"><input type="checkbox" required> I accept the <span style="color: lightgreen;"> Terms of Use</span> & <span style="color: lightgreen;">Privacy Policy.</span></div>
+
+    <button class="register" type="submit"><b>Register Now</b></button>
 
     </form>
+    
     </section>
+
+    <div style="color: white;">Already have an account? <a href="#" style="color: white;">Sign in</a></div>
 
     <script src="./fetch.js"></script>
 </body>

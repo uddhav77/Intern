@@ -1,15 +1,71 @@
 body{
-    background-color: skyblue;
+    background-color: rgb(98, 118, 133);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     color: grey;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
 }
 
 section{
-    width: 50%;
-    height: 500px;
+    width: 28%;
+    height: 450px;
     background-color: whitesmoke;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 50px;
+}
+
+.reg{
+    font-size: 40px;
+    margin-top: 20px;
+}
+
+p{
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    
+}
+
+.name{
+    display: flex;
+    gap:20px;  
+    margin-top: 10px; 
+}
+
+.name1{
+    padding: 8px;
+}
+
+.email{
+    padding: 8px;
+}
+
+.password{
+    padding: 8px;
+}
+
+.cpassword{
+    padding: 8px;
+}
+
+.checkbox{
+    font-size: 14px;
+}
+
+.register{
+    width: 100%;
+    margin-top: 20px;
+    background-color: rgb(43, 183, 64);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
 }

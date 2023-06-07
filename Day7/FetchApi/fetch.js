@@ -6,11 +6,14 @@ const emailEl = document.querySelector('.email')
 const passwordEl = document.querySelector('.password')
 const cpasswordEl = document.querySelector('.cpassword')
 
-
-
-
 formEl.addEventListener('submit',  event =>{
     event.preventDefault()
+    
+    if (passwordEl.value !== cpasswordEl.value) {
+            alert("Password and Confirm Password do not match")
+        
+            return;
+        }
 
     let data = {
         firstName: fName.value,
@@ -54,17 +57,3 @@ formEl.addEventListener('submit',  event =>{
 
 
 
-// fetch('https://reqres.in/api/users',{
-//     method: 'POST',
-//     headers: {
-//         'Content-Type' : 'application/json'
-//     },
-//     body: JSON.stringify({
-//         name:'uddhav',
-//         club:'Arsenal',
-//         age:'23'
-//     })
-// })
-// .then((response)=> {return response.json()})
-// .then((value)=> {console.log(value)})
-// .catch((error)=> {console.log('404 error')})
