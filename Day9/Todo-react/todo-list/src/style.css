@@ -1,0 +1,38 @@
+*{
+    background-color: rgb(178, 228, 235);
+    color: rgb(30, 30, 39);
+
+}
+
+.main-div{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.center-div{
+    background-color: azure;
+    padding: 40px;
+    border-radius: 10px;
+    margin-top: 100px;
+}
+
+.head{
+    background-color: azure;
+    text-align: center;
+    font-size: 40px;
+}
+
+.button{
+    background-color: rgb(207, 209, 232);
+    font-size: 30px;
+}
+
+ol{
+    background-color: azure; 
+}
+
+li{
+    background-color: azure;
+    font-size: 28px;
+}
