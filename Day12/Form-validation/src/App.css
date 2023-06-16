@@ -1,0 +1,106 @@
+body{
+  background-color: rgb(36, 36, 35);
+  display: flex;
+  justify-content: center;
+  
+}
+
+.main{
+  background-color: rgb(241, 243, 233);
+  padding: 30px;
+  width: 100%;
+  margin-top: 160px;
+  border-radius: 20px;
+}
+
+.containerA h1{
+  color: rgba(33, 51, 141, 0.913);
+  text-align: center;
+  font-style: italic;
+  text-shadow: 2px 0px 10px black;
+}
+
+.containerA p{
+  text-align: center;
+  font-size: 16px;
+  color: rgb(4, 36, 80);
+}
+
+.containerB{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.email{
+  padding: 12px;
+  margin-top: 12px;
+  background-color: rgb(187, 224, 236);
+  border-style: none;
+  border-radius: 6px;
+  width: 80%;
+  box-shadow: 2px 4px 4px black;
+}
+
+.password{
+  padding: 12px;
+  margin-top: 14px;
+  background-color: rgb(187, 224, 236);
+  border-style: none;
+  border-radius: 6px;
+  width: 80%;
+  box-shadow: 2px 4px 4px black;
+}
+
+.contB{
+  margin-top: 14px;
+  display: flex;
+  font-size: 12px;
+  width: 100%;
+  margin-left: 28px;
+  justify-content: space-between;
+}
+
+.contB1{
+  display:flex;
+}
+
+.forget{
+  margin-right: 30px;
+}
+
+.containerC{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login{
+  padding: 10px;
+  width: 220px;
+  border-style: none;
+  border-radius: 6px;
+  background-color: rgb(64, 116, 199);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login:hover{
+  background-color: brown;
+}
+
+.dont{
+  font-style: italic;
+  margin-top: 16px;
+}
+
+.btnA{
+  border-style: none;
+  background-color: rgb(241, 243, 233);
+  font-style: italic;
+  text-decoration: underline;
+  cursor: pointer;
+}
