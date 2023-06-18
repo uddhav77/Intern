@@ -9,7 +9,7 @@ body{
   background-color: rgb(241, 243, 233);
   padding: 30px;
   width: 100%;
-  margin-top: 160px;
+  margin-top: 100px;
   border-radius: 20px;
 }
 
@@ -104,3 +104,102 @@ body{
   text-decoration: underline;
   cursor: pointer;
 }
+
+/* register.css */
+
+.mainB{
+  background-color: rgb(241, 243, 233);
+  padding: 30px;
+  margin-top: 100px;
+  border-radius: 20px;
+}
+
+.containerA1 h1{
+  color: rgba(33, 51, 141, 0.913);
+  text-align: center;
+  font-style: italic;
+  text-shadow: 2px 0px 10px black;
+}
+
+.containerA1 p{
+  text-align: center;
+  font-size: 16px;
+  color: rgb(4, 36, 80);
+}
+
+.containerB1{
+  display: flex;
+  flex-direction: column; 
+}
+
+.contBA1{
+  display: flex;
+  gap: 2px;
+  margin-top: 16px;
+}
+
+.firstname{
+  padding: 12px;
+  background-color: rgb(187, 224, 236);
+  border-style: none;
+  border-radius: 6px;
+  box-shadow: 2px 4px 4px black;
+}
+
+.lastname{
+  padding: 12px;
+  background-color: rgb(187, 224, 236);
+  border-style: none;
+  border-radius: 6px;
+  box-shadow: 2px 4px 4px black;
+}
+
+.email1{
+  padding: 12px;
+  margin-top: 40px;
+  background-color: rgb(187, 224, 236);
+  border-style: none;
+  border-radius: 6px;
+  box-shadow: 2px 4px 4px black;
+  flex: 1;
+}
+
+.password1{
+  padding: 12px;
+  background-color: rgb(187, 224, 236);
+  border-style: none;
+  border-radius: 6px;
+  box-shadow: 2px 4px 4px black;
+  flex: 1;
+}
+
+.password2{
+  padding: 12px;
+  background-color: rgb(187, 224, 236);
+  border-style: none;
+  border-radius: 6px;
+  flex: 1;
+  box-shadow: 2px 4px 4px black;
+}
+
+
+.containerC1{
+  display: flex;
+  justify-content: space-between;
+}
+
+.containerC1 button{
+  padding: 10px;
+  border-style: none;
+  border-radius: 6px;
+  background-color: rgb(64, 116, 199);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.containerC1 button:hover{
+  background-color: rgb(10, 126, 43);
+}
+

@@ -25,6 +25,7 @@ const Login = (props) => {
       console.log(formValues);
       }
     },[formErrors]);
+
      const validate = (value) =>{
       const errors ={};
       if(!value.email){
@@ -45,7 +46,7 @@ const Login = (props) => {
     if(Object.keys(formErrors).length === 0 && submit ){ 
     alert("Login from successfully!!!!!")
     }
-   })}
+   },[formErrors])}
 
     <div>
       <div className='main'>
