@@ -1,0 +1,264 @@
+body{
+  background-color: rgb(162, 202, 228);
+  display: flex;
+  justify-content: center;
+  
+}
+
+.main{
+  background-color: rgb(241, 243, 233);
+  padding: 30px;
+  width: 100%;
+  margin-top: 30px;
+  border-radius: 20px;
+}
+
+.containerA h1{
+  color: rgba(33, 51, 141, 0.913);
+  text-align: center;
+  font-style: italic;
+  text-shadow: 2px 0px 10px black;
+}
+
+.containerA p{
+  text-align: center;
+  font-size: 16px;
+  color: rgb(4, 36, 80);
+}
+
+.containerB{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.email{
+  padding: 12px;
+  margin-top: 12px;
+  background-color: rgb(213, 220, 228);
+  border-style: none;
+  border-radius: 6px;
+  width: 80%;
+  box-shadow: 2px 4px 4px black;
+}
+
+.password{
+  padding: 12px;
+  margin-top: 14px;
+  background-color: rgb(213, 220, 228);
+  border-style: none;
+  border-radius: 6px;
+  width: 80%;
+  box-shadow: 2px 4px 4px black;
+}
+
+.contB{
+  margin-top: 14px;
+  display: flex;
+  font-size: 12px;
+  width: 100%;
+  margin-left: 28px;
+  justify-content: space-between;
+}
+
+.contB1{
+  display:flex;
+}
+
+.forget{
+  margin-right: 30px;
+}
+
+.containerC{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login{
+  padding: 10px;
+  width: 220px;
+  border-style: none;
+  border-radius: 6px;
+  background-color: rgb(64, 116, 199);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login:hover{
+  background-color: brown;
+}
+
+.dont{
+  font-style: italic;
+  margin-top: 16px;
+}
+
+.btnA{
+  border-style: none;
+  background-color: rgb(241, 243, 233);
+  font-style: italic;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* register.css */
+
+.mainB{
+  background-color: rgb(241, 243, 233);
+  padding: 30px;
+  margin-top: 30px;
+  border-radius: 20px;
+}
+
+.containerA1 h1{
+  color: rgba(33, 51, 141, 0.913);
+  text-align: center;
+  font-style: italic;
+  text-shadow: 2px 0px 10px black;
+}
+
+.containerA1 p{
+  text-align: center;
+  font-size: 16px;
+  color: rgb(4, 36, 80);
+}
+
+.containerB1{
+  display: flex;
+  flex-direction: column; 
+}
+
+.contBA1{
+  display: flex;
+  gap: 4px;
+  margin-top: 16px;
+}
+
+.firstname{
+  padding: 12px;
+  background-color: rgb(213, 220, 228);
+  border-style: none;
+  border-radius: 6px;
+  box-shadow: 2px 4px 4px black;
+}
+
+.lastname{
+  padding: 12px;
+  background-color: rgb(213, 220, 228);
+  border-style: none;
+  border-radius: 6px;
+  box-shadow: 2px 4px 4px black;
+}
+
+.email1{
+  padding: 12px;
+  margin-top: 36px;
+  background-color: rgb(213, 220, 228);
+  border-style: none;
+  border-radius: 6px;
+  box-shadow: 2px 4px 4px black;
+  flex: 1;
+}
+
+.password1{
+  padding: 12px;
+  background-color: rgb(213, 220, 228);
+  border-style: none;
+  border-radius: 6px;
+  box-shadow: 2px 4px 4px black;
+  flex: 1;
+}
+
+.password2{
+  padding: 12px;
+  background-color: rgb(213, 220, 228);
+  border-style: none;
+  border-radius: 6px;
+  flex: 1;
+  box-shadow: 2px 4px 4px black;
+}
+
+.containerC1{
+  display: flex;
+  justify-content: center;
+}
+
+.containerC1 button{
+  padding: 10px;
+  border-style: none;
+  border-radius: 6px;
+  background-color: rgb(64, 116, 199);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  width: 80%;
+}
+
+.containerC1 button:hover{
+  background-color: rgb(10, 126, 43);
+}
+
+/* home css */
+
+.main-nav{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.navbar{
+  display: flex;
+  margin-top: 30px;
+ 
+}
+
+.bname{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.menu{
+  display: flex;
+}
+
+.menu ul{
+  display: flex;
+  gap: 20px;
+}
+
+.menu li{
+  list-style: none;
+  background-color: rgb(240, 235, 229);
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 2px 2px 8px rgb(193, 231, 88);
+}
+
+.active{
+  color: rgb(134, 176, 212);
+}
+
+/* user css */
+
+.disp{
+  margin-top: 20px;
+  font-size: 36px;
+  color: rgb(8, 88, 209);
+  margin-left: 90px;
+}
+
+.table{
+  background-color: aliceblue;
+}
+
+.loading{
+  text-align: center;
+  color: white;
+  font-size: 36px;
+
+}
