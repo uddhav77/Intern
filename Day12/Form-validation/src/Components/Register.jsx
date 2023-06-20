@@ -32,20 +32,20 @@ const Register = (props) => {
     Confirmpassword:formData.confirmPassword
   };
   
-  fetch (" https://rest-api-bjno.onrender.com/register",{
-    method:'POST',
-    headers:{
-      'Content-Type':"application/json"
-    },
-    body:JSON.stringify(registerdata),
-  })
-  .then(res=>res.json())
-  .then(data =>{ 
-    console.log(data)
-
-  })
   
   useEffect(()=>{
+    fetch ("https://rest-api-bjno.onrender.com/register" ,{
+      method:'POST',
+      headers:{
+        'Content-Type':"application/json"
+      },
+      body:JSON.stringify(registerdata),
+    })
+    .then(res=>res.json())
+    .then(data =>{ 
+      console.log(data)
+  
+    })
     console.log(errors);
     if(Object.keys(errors).length === 0  && formSubmit){
       console.log(formData);
@@ -64,28 +64,35 @@ const Register = (props) => {
     if(formData.email === ''){
       err.email = 'Email Required!'
     }
-    if(formData.password === '' || formData.password.length<= 4){
-      err.password = 'Password length must be atleast 5!'
+    if(formData.password === ''){
+      err.password = 'Password Required!'
     }
-    if(formData.confirmPassword === '' || formData.password.length <=4){
-      err.confirmPassword = 'Password length must be atleast 5!'
-    }else if(formData.confirmPassword !== formData.password){
+    else if(formData.password.length<= 4){
+      err.password = 'Password length must be atleast 4!'
+    }
+    if(formData.confirmPassword === ''){
+      err.confirmPassword = 'Password Required!'
+    }
+    else if(formData.confirmPassword.length<= 4){
+      err.password = 'Password length must be atleast 4!'
+    }
+    else if(formData.confirmPassword !== formData.password){
       err.confirmPassword = 'Password and confirm password does not match'
     }
 
-    setErrors({...err})
+    // setErrors({...err})
 
     return err;
   }
-
+  
+  {useEffect(()=>{
+  if(Object.keys(errors).length === 0 && formSubmit ){ 
+  alert("Registred successfully!!!!!")
+  }
+ },[errors])}
 
   return (
     <>
-    {useEffect(()=>{
-    if(Object.keys(errors).length === 0 && formSubmit ){ 
-    alert("Registred successfully!!!!!")
-    }
-   },[errors])}
 
     <div>
     <div className='mainB'>
@@ -134,7 +141,7 @@ const Register = (props) => {
 
         <div className='containerC1'>
   
-        <button type='submit' >Register Now</button>
+        <button >Register Now</button>
         <button type='button' onClick={()=> props.onFormSwitch('login') }>Back</button>
         </div>
 
