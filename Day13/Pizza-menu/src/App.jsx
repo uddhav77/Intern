@@ -1,7 +1,6 @@
 import './App.css'
 import Menucards from './Components/Menucards'
 import Image1 from './assets/images/pizza2.jpg'
-import Image2 from './assets/images/pizza3.jpg'
 import Image3 from './assets/images/pizza4.jpeg'
 import Image4 from './assets/images/pizza5.jpeg'
 
