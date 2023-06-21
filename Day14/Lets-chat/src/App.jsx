@@ -5,6 +5,7 @@ import Register from './Register'
 import Users from './Users'
 import Home from './Home'
 import Error from './Error'
+import Logout from './Logout'
 
 function App() {
 
@@ -14,7 +15,8 @@ function App() {
         <Route path="/" element={<Home/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register/>} />
-        <Route path="/*" element={<Users/>} />
+        <Route path="/users" element={<Users/>} />
+        <Route path="/logout" element={<Logout/>} />
         <Route path="*" element={<Error/>} />
       </Routes>
     </BrowserRouter>

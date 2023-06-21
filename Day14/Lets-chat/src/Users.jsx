@@ -35,8 +35,9 @@ const Users = () => {
     <>
       <Nav />
 
-      <h1 className="disp">List of all </h1>
+      <h1 className="disp">List of all Users</h1>
 
+      
       {loading ? (
         <div className='loading'>Loading...</div>
       ) : (

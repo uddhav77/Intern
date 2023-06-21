@@ -22,11 +22,16 @@ const Nav = () => {
                 </li>
 
                 <li>
-                <NavLink to="users"  style={{textDecoration:'none'}}>Users</NavLink> 
+                <NavLink to="/users"  style={{textDecoration:'none'}}>Users</NavLink> 
+                </li>
+
+                <li>
+                <NavLink to="/logout"  style={{textDecoration:'none'}}>Logout</NavLink> 
                 </li>
 
             </ul>
         </div>
+        
     </div>
     
     </>

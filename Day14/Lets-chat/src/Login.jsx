@@ -46,7 +46,9 @@ const Login = (props) => {
     }
 
     console.log(data);
-    localStorage.setItem("messgae", data.message)
+    localStorage.setItem("message", data.message)
+    localStorage.setItem("email", data.data.email)
+    localStorage.setItem("id", data.data._id)
     setSubmit(true);
   };
 
