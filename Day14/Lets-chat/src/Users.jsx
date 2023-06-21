@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import Nav from './Component/Nav';
+import React, { useEffect, useState } from "react";
+import useCurrentUser from "./Component/useCurrentUser";
 
 const Users = () => {
   const [data, setData] = useState([]);
@@ -10,9 +10,12 @@ const Users = () => {
       try {
         const startTime = Date.now();
 
-        const response = await fetch('https://rest-api-bjno.onrender.com/users', {
-          method: 'GET',
-        });
+        const response = await fetch(
+          "https://rest-api-bjno.onrender.com/users",
+          {
+            method: "GET",
+          }
+        );
         const value = await response.json();
         const endTime = Date.now();
 
@@ -21,9 +24,9 @@ const Users = () => {
         setLoading(false);
 
         const loadingTime = endTime - startTime;
-        console.log('Loading Time:', loadingTime);
+        console.log("Loading Time:", loadingTime);
       } catch (err) {
-        console.log('Error', err);
+        console.log("Error", err);
         setLoading(false);
       }
     }
@@ -31,28 +34,35 @@ const Users = () => {
     fetchData();
   }, []);
 
+  const { isAuth, id } = useCurrentUser();
+  if (!isAuth) {
+    return <p 
+    style={{fontSize:36,
+       textAlign:'center'
+    }}
+    
+    >Login First</p>;
+  }
+
   return (
     <>
-      <Nav />
-
       <h1 className="disp">List of all Users</h1>
 
-      
       {loading ? (
-        <div className='loading'>Loading...</div>
+        <div className="loading">Loading...</div>
       ) : (
         <div className="table">
           <table border="1">
             <tr>
-              <th style={{ color: 'black' }}>FirstName</th>
-              <th style={{ color: 'black' }}>LastName</th>
-              <th style={{ color: 'black' }}>Email</th>
+              <th style={{ color: "black" }}>FirstName</th>
+              <th style={{ color: "black" }}>LastName</th>
+              <th style={{ color: "black" }}>Email</th>
             </tr>
             {data.map((item) => (
               <tr key={item.id}>
-                <td style={{ color: 'black' }}>{item.firstName}</td>
-                <td style={{ color: 'black' }}>{item.lastName}</td>
-                <td style={{ color: 'black' }}>{item.email}</td>
+                <td style={{ color: "black" }}>{item.firstName}</td>
+                <td style={{ color: "black" }}>{item.lastName}</td>
+                <td style={{ color: "black" }}>{item.email}</td>
               </tr>
             ))}
           </table>

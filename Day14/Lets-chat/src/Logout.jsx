@@ -1,5 +1,4 @@
 import React from 'react'
-import Nav from './Component/Nav'
 
 const Logout = () => {
 
@@ -10,9 +9,7 @@ const Logout = () => {
 
   return (
     <>
-    <div>
-      <Nav/>
-    </div>
+   
 
     <button className='logout' onClick={handleLogout}>Log Out</button>
 

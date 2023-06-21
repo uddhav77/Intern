@@ -1,15 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 
 const useCurrentUser = () => {
+  const [isAuth, setIsAuth] = useState(false);
+  const id = localStorage.getItem("id");
 
-    const getId = localStorage.getItem("id")
-    const getEmail = localStorage.getItem("email")
-    const getMessage = localStorage.getItem("message")
-  return (
-    <div>
-       {/* { getId && getEmail && getMessage? } */}
-    </div>
-  )
-}
+  useEffect(() => {
+    if (id) {
+      setIsAuth(true);
+    } else {
+      setIsAuth(false);
+    }
+  }, [id]);
 
-export default useCurrentUser
+  return { id, isAuth };
+};
+
+export default useCurrentUser;

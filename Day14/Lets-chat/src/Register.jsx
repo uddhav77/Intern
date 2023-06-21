@@ -94,7 +94,6 @@ const Register = (props) => {
 
   return (
     <>
-     <Nav/>
     
     <div className='mainB'>
       <form onSubmit={handleForm}>

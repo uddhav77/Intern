@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Nav from "./Component/Nav";
-
+import useCurrentUser from "./Component/useCurrentUser";
+import { useNavigate } from "react-router-dom";
 
 const Login = (props) => {
   const initialValues = { email: "", password: "" };
@@ -8,6 +8,9 @@ const Login = (props) => {
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [submit, setSubmit] = useState(false);
+  const { getId } = useCurrentUser;
+  const navigate = useNavigate();
+  console.log(getId);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,18 +40,14 @@ const Login = (props) => {
       headers: {
         "Content-Type": "application/json",
       },
-     });
+    });
 
-    const data = await response.json()
-    if(data){
-      alert (data.message)
-
+    const data = await response.json();
+    if (data) {
+      alert(data.message);
+      navigate("/profile");
     }
-
-    console.log(data);
-    localStorage.setItem("message", data.message)
-    localStorage.setItem("email", data.data.email)
-    localStorage.setItem("id", data.data._id)
+    localStorage.setItem("id", data.data._id);
     setSubmit(true);
   };
 
@@ -59,76 +58,70 @@ const Login = (props) => {
     }
   }, [formErrors]);
 
- 
-
   return (
     <>
-        <Nav/>
-    
-        <div className="main">
-          <form onSubmit={handleSubmit}>
-            <div className="containerA">
-              <h1>LetsChat</h1>
-              <p>Login to your account</p>
-            </div>
+      <div className="main">
+        <form onSubmit={handleSubmit}>
+          <div className="containerA">
+            <h1>LetsChat</h1>
+            <p>Login to your account</p>
+          </div>
 
-            <div className="containerB">
-              <input
-                name="email"
-                type="email"
-                placeholder="Email"
-                className="email"
-                value={formValues.email}
-                onChange={handleChange}
-              />
-              <span style={{ color: "red", marginTop: 18 }}>
-                {formErrors.email}
-              </span>
+          <div className="containerB">
+            <input
+              name="email"
+              type="email"
+              placeholder="Email"
+              className="email"
+              value={formValues.email}
+              onChange={handleChange}
+            />
+            <span style={{ color: "red", marginTop: 18 }}>
+              {formErrors.email}
+            </span>
 
-              <input
-                name="password"
-                type="password"
-                placeholder="********"
-                className="password"
-                value={formValues.password}
-                onChange={handleChange}
-              />
-              <span style={{ color: "red", marginTop: 18 }}>
-                {formErrors.password}
-              </span>
+            <input
+              name="password"
+              type="password"
+              placeholder="********"
+              className="password"
+              value={formValues.password}
+              onChange={handleChange}
+            />
+            <span style={{ color: "red", marginTop: 18 }}>
+              {formErrors.password}
+            </span>
 
-              <div className="contB">
-                <div className="contB1">
-                  <input type="checkbox" className="check" /> <p>Remember me</p>
-                </div>
-
-                <p className="forget"> Forget Password?</p>
+            <div className="contB">
+              <div className="contB1">
+                <input type="checkbox" className="check" /> <p>Remember me</p>
               </div>
-            </div>
 
-            <div className="containerC">
-              <div className="btn">
-                <button className="login" type="submit">
-                  Login
-                </button>
-              </div>
-              <div className="dont">
-                Don't have an account?{" "}
-                <button
-                  className="btnA"
-                  type="button"
-                  onClick={() => props.onFormSwitch("register")}
-                >
-                  Sign up
-                </button>
-              </div>
+              <p className="forget"> Forget Password?</p>
             </div>
-          </form>
-        </div>
-    
+          </div>
+
+          <div className="containerC">
+            <div className="btn">
+              <button className="login" type="submit">
+                Login
+              </button>
+            </div>
+            <div className="dont">
+              Don't have an account?{" "}
+              <button
+                className="btnA"
+                type="button"
+                onClick={() => props.onFormSwitch("register")}
+              >
+                Sign up
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
     </>
   );
 };
 
 export default Login;
-
