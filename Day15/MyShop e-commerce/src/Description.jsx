@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-const Description = () => {
+const Description = ({addToCart}) => {
   const { id } = useParams();
   const [item, setItem] = useState(null);
 
@@ -39,6 +39,7 @@ const Description = () => {
           </div>
         </div>
         <p className="mt-4 ">{item.description}</p>
+        <button className="bg-orange-200 p-2 mt-4 w-full rounded-lg" onClick={() => addToCart(datas)}>Add to Cart</button>
       </div>
     </div>
   );
