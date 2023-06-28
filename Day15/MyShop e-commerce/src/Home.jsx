@@ -26,7 +26,7 @@ const Home = ({ addToCart }) => {
   console.log(data);
 
   return (
-    <div className="flex flex-wrap mt-8 gap-6 ml-5 justify-center">
+    <div className="flex flex-wrap gap-6 ml-5 pt-40 justify-center">
       {data.map((datas) => (
         <div
           className="p-8 w-1/5 h-max flex flex-col shadow-2xl"

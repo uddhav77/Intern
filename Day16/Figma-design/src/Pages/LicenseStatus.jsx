@@ -3,7 +3,7 @@ import {BiSearch} from 'react-icons/bi'
 
 const LicenseStatus = () => {
   return (
-    <>
+
         <div className='ml-[106px] mt-10'>
             <div className='text-[36px] font-[600]'>
                 License Status
@@ -19,7 +19,7 @@ const LicenseStatus = () => {
                 </div>
             </div>
         </div>
-    </>
+    
   )
 }
 

@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
     <>
-      <div className="bg-slate-400 py-8 flex text-white">
+      <div className="bg-slate-400 py-8 flex text-white fixed w-full">
         <div className="text-4xl font-bold ml-20">
           <NavLink to="/">MyShop</NavLink>
         </div>

@@ -10,14 +10,22 @@ const App = () => {
   const [cartItems, setCartItems] = useState([]);
 
   const addToCart = (datas) => {
-    setCartItems((prev) => [...prev, datas]);
-    alert('Item Added');
+    const existingItem = cartItems.find(
+      (cartItems) => cartItems.id === datas.id
+    );
+    if (existingItem) {
+      existingItem.quantity += 1;
+      alert(`Item ${item.title} added ${existingItem.quantity}X to the cart`);
+    } else {
+      setCartItems([...cartItems, { ...datas, quantity: 1 }]);
+      alert("Item Added");
+    }
   };
 
   const removeItem = (itemId) => {
     const updateCart = cartItems.filter((item) => item.id !== itemId);
     setCartItems(updateCart);
-    alert('Item removed')
+    alert("Item removed");
   };
 
   return (
@@ -32,7 +40,10 @@ const App = () => {
             element={<MyCart cartItems={cartItems} removeItem={removeItem} />}
           />
           <Route path="/contactus" element={<Contactus />} />
-          <Route path="/description/:id" element={<Description addToCart={addToCart}/>} />
+          <Route
+            path="/description/:id"
+            element={<Description addToCart={addToCart} />}
+          />
         </Routes>
       </>
     </BrowserRouter>

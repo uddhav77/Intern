@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import Button from './Button'
+
 
 const Login = (props) => {
   const initialValues = { email: "", password: "" };
@@ -36,15 +36,16 @@ const Login = (props) => {
       headers: {
         "Content-Type": "application/json",
       },
-    });
+     });
 
     const data = await response.json()
     if(data){
       alert (data.message)
-      
+
     }
 
     console.log(data);
+    localStorage.setItem("messgae", data.message)
     setSubmit(true);
   };
 
