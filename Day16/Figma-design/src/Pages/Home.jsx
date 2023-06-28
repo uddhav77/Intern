@@ -6,13 +6,14 @@ import { CgFileDocument } from "react-icons/cg";
 import { RiTodoLine } from "react-icons/ri";
 import { BiCycling } from "react-icons/bi";
 import { AiOutlineCreditCard } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import DispService from "../Components/DispService";
 import { FiSearch } from "react-icons/fi";
 import { LiaIdCardSolid } from "react-icons/lia";
 import { AiOutlineEye } from "react-icons/ai";
 import { BsFillCarFrontFill } from "react-icons/bs";
 import { PiExamBold } from "react-icons/pi";
+import LicenseData from "./LicenseData";
 
 const Home = () => {
   return (
@@ -98,9 +99,18 @@ const Home = () => {
 
           <div className="bg-gradient-to-t from-purple-800 to-purple-300 to-blue-200 w-[87%] h-[450px] rounded-2xl mt-8">
             <div className="flex justify-center">
+              <NavLink to="/licensedata">
               <DispService title="Liscense Data" icon={<FiSearch />} />
+              </NavLink>
+
+              <NavLink to="/licensestatus">
               <DispService title="Licene status " icon={<LiaIdCardSolid />} />
+              </NavLink>
+
+              <NavLink to="/onlineexam">
               <DispService title="Online Exam" icon={<RiTodoLine />} />
+              </NavLink>
+
               <DispService title="Color Vision" icon={<AiOutlineEye />} />
             </div>
 
