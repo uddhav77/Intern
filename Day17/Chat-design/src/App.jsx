@@ -56,12 +56,12 @@ const App = () => {
 
           <div className="bg-stone-200 h-fit rounded-2xl">
             <div className="bg-white rounded-2xl">
-              <div className="flex gap-4 p-10">
+              <div className="flex gap-4 p-8">
                 <div className="text-[38px] text-blue-500 h-16 w-16 border-black border-2 border-dashed rounded-full flex justify-center">
                   +
                 </div>
-                {pictures.map((item) => (
-                  <Pictures img={item.image} />
+                {pictures.map((item, index) => (
+                  <Pictures key={index} img={item.image} />
                 ))}
               </div>
 
