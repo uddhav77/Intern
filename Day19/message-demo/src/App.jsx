@@ -7,7 +7,7 @@ import Message from "./Pages/Message";
 const App = () => {
   return (
     <>
-      <div className="bg-blue-300 p-8 h-max">
+      <div className="bg-blue-300 p-8 h-max font-lato">
         <BrowserRouter>
           <Navbar />
 

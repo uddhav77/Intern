@@ -46,7 +46,7 @@ const Message = () => {
             </div>
 
             <div className="ml-4">
-              <div className="text-lg font-medium">Robert Richards</div>
+              <div className="text-lg font-semibold">Robert Richards</div>
               <div className="flex text-gray-500 items-center">
                 <div className="text-xs">Hello, tomorrow in 5 o'clock</div>
                 <p className="text-[10px] ml-2">. 5m</p>
