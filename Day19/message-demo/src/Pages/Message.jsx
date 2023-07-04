@@ -14,8 +14,8 @@ import Footer from "../Components/Footer";
 
 const Message = () => {
   return (
-    <div className="pt-10 flex justify-center">
-      <div className="bg-white w-fit rounded-2xl p-6">
+    <div className="pt-10 flex  justify-center">
+      <div className="bg-white rounded-2xl p-6">
         <div className="flex justify-between">
           <div className="flex">
             <div className="text-4xl font-bold">Messages</div>
@@ -23,7 +23,7 @@ const Message = () => {
               <RiArrowDropDownLine />
             </div>
           </div>
-          <div className="text-4xl flex items-center">
+          <div  className="text-4xl flex items-center">
             <BiSearch />
           </div>
         </div>
@@ -32,24 +32,21 @@ const Message = () => {
           <div className="text-gray-500">Pinned</div>
 
           <div className="flex items-center mt-4">
-            <div className="flex relative">
-              <div>
-                <img
-                  src={image12}
-                  alt="profile"
-                  className="h-12 w-12 rounded-full"
-                />
-              </div>
-              <div className="absolute bottom-0 left-8 h-2 w-2 bg-green-400 rounded-full">
-        
-              </div>
+            <div className="flex relative ">
+              <img
+                src={image12}
+                alt="profile"
+                className="h-12 w-12 rounded-full"
+              />
+
+              <div className="absolute bottom-0 left-8 h-2 w-2 bg-green-400 rounded-full"></div>
             </div>
 
             <div className="ml-4">
               <div className="text-lg font-semibold">Robert Richards</div>
               <div className="flex text-gray-500 items-center">
                 <div className="text-xs">Hello, tomorrow in 5 o'clock</div>
-                <p className="text-[10px] ml-2">. 5m</p>
+                <p className="text-[10px] ml-2">.5m</p>
               </div>
             </div>
 
@@ -67,42 +64,42 @@ const Message = () => {
                 image={image2}
                 name="Wendy Watson"
                 message="We need to meet today"
-                status=". 12m"
+                status=".12m"
               />
               <hr />
               <OtherFriends
                 image={image8}
                 name="Harold Howard"
                 message="Check mail, please"
-                status=". 1h"
+                status=".1h"
               />
               <hr />
               <OtherFriends
                 image={image3}
                 name="Connie Lane"
                 message="Where are you?"
-                status=". yesterday"
+                status=".yesterday"
               />
               <hr />
               <OtherFriends
                 image={image9}
                 name="Kathryn Alexander"
                 message="Alright"
-                status=". yesterday"
+                status=".yesterday"
               />
               <hr />
               <OtherFriends
                 image={image11}
                 name="Bernard Nguyen"
                 message="is typing..."
-                status=". 2d"
+                status=".2d"
               />
               <hr />
               <OtherFriends
                 image={image10}
                 name="Nathan Fox"
                 message="Thank you so much"
-                status=". 4d"
+                status=".4d"
               />
             </div>
             <div className="bg-[#2663FF] w-8 flex justify-center rounded-full absolute top-4 right-0 text-white">
