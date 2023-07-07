@@ -4,6 +4,8 @@ import Calculate from "./Calculate";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+// import { useNavigate } from "react-router-dom";
+import dayjs from "dayjs";
 
 const Terms = () => {
   const [capacity, setCapacity] = useState("");
@@ -19,47 +21,79 @@ const Terms = () => {
     dateTo: yup.string().required("Please Enter Date"),
   });
 
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  // const navigate = useNavigate();
+
   const taxCalculate = () => {
     const parsedCapacity = parseInt(capacity);
     if (parsedCapacity === 110) {
       return 1000;
     } else if (parsedCapacity < 110) {
       return 1500;
-    } else if (parsedCapacity < 150) {
+    } else if (parsedCapacity <= 150) {
       return 2000;
-    } else if (parsedCapacity < 200) {
+    } else if (parsedCapacity <= 200) {
       return 2500;
-    } else if (parsedCapacity < 350) {
+    } else if (parsedCapacity <= 350) {
       return 3000;
     } else {
       return 5000;
     }
   };
+  console.log(capacity, taxCalculate())
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
+  // const calculateTaxAmount = (startYear, endYear) => {
+  //   const calculatedTax = taxCalculate();
+
+  //   const start = dayjs(startYear, "YYYY");
+  //   const end = dayjs(endYear, "YYYY");
+  //   const difference = end.diff(start, "year");
+
+  //   return calculatedTax * (difference + 1);
+  // };
 
   const onSubmit = (data) => {
-    const calculatedTax = taxCalculate();
+    // const startYear = parseInt(data.dateFrom);
+    // const endYear = parseInt(data.dateTo);
 
-    const startYear = parseInt(data.dateFrom);
-    const endYear = parseInt(data.dateTo);
+    // setRenewFrom(data.dateFrom);
+    // setRenewTo(data.dateTo);
 
-    setRenewFrom(data.dateFrom);
-    setRenewTo(data.dateTo);
+    // const calculatedTax = calculateTaxAmount(startYear, endYear);
+    // setTax(calculatedTax);
 
-    if (endYear - startYear === 1) {
-      setTax(calculatedTax);
-    } else if (endYear - startYear === 2) {
-      setTax(calculatedTax * 2);
+    // navigate(/tax-result/${calculatedTax});
+    console.log(data);
+    const calculatedTax = taxCalculate(parseInt(data.capacity));
+    const date1 = dayjs(data.date, "YYYY-MM-DD" );
+    const date2 = dayjs(data.dates, "YYYY-MM-DD");
+
+    const diff = {
+        days: date2.diff(date1, "day"),
+    };
+    console.log(diff)
+
+    let taxValue = 0;
+    if (diff.days < 365 ) {
+      taxValue = calculatedTax;
+    }else if (diff.days === 365 || diff.days <= 455 ) {
+      taxValue = calculatedTax;
+    } else if ( diff.days > 455 ) {
+      taxValue = calculatedTax * 2;
     } else {
-      setTax(calculatedTax * 3);
+      taxValue = calculatedTax * 3;
     }
+
+    setTax(taxValue);
+    setRenewFrom(data.date);
+    setRenewTo(data.dates);
   };
 
   return (
@@ -92,7 +126,6 @@ const Terms = () => {
               <option value="4 wheelers">4 wheelers</option>
             </datalist>
           </div>
-
           <div>
             <input
               type="text"
@@ -176,7 +209,7 @@ const Terms = () => {
           <Calculate />
         </div>
       </form>
-      <div>Total Amount (TAX): {tax}</div>
+      <div>Total Tax: {tax}</div>
     </div>
   );
 };

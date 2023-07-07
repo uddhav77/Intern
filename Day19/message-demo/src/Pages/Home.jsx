@@ -29,11 +29,11 @@ const Home = () => {
   ];
 
   return (
-    <div className="h-fit pt-10 flex justify-center">
-      <div className="bg-white rounded-xl w-[30%] p-6">
+    <div className=" pt-10 flex justify-center">
+      <div className="bg-white rounded-xl p-6">
         <div className="text-xl">Moments</div>
 
-        <div className="flex gap-2 mt-6">
+        <div className="flex gap-2 mt-6 ">
           <div className="text-[36px] bg-blue-100 text-blue-600 h-14 w-14 rounded-full flex justify-center">
             +
           </div>
