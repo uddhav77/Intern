@@ -5,4 +5,9 @@ export default interface TodoItem{
     completed: boolean;
     editing: boolean;
     editedValue: string;
+}export default interface TodoItem{
+    id: number;
+    value: string;
+    status: boolean;
+    completed: boolean;
 }
