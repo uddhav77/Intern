@@ -3,4 +3,6 @@ export default interface TodoItem{
     value: string;
     status: boolean;
     completed: boolean;
+    editing: boolean;
+    editedValue: string;
 }

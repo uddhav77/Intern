@@ -16,6 +16,8 @@ const TodoList: FC = () => {
       value: task,
       status: false,
       completed: false,
+      editing: false,
+      editedValue: '',
     };
 
     setTodo([...todo, newTask]);
@@ -48,6 +50,66 @@ const TodoList: FC = () => {
     );
   };
 
+  const handleEdit = (id: number, editedValue: string): void => {
+    setTodo(
+      todo.map((task) => {
+        if (task.id === id) {
+          return {
+            ...task,
+            editedValue,
+          };
+        }
+        return task;
+      })
+    );
+  };
+
+  const handleCancelEdit = (id: number): void => {
+    setTodo(
+      todo.map((task) => {
+        if (task.id === id) {
+          return {
+            ...task,
+            editing: false,
+            editedValue: '',
+          };
+        }
+        return task;
+      })
+    );
+  };
+
+  const handleTaskClick = (id: number): void => {
+    setTodo(
+      todo.map((task) => {
+        if (task.id === id) {
+          return {
+            ...task,
+            editing: true,
+            editedValue: task.value,
+          };
+        }
+        return task;
+      })
+    );
+  };
+
+  const handleSaveClick = (id: number): void => {
+    setTodo(
+      todo.map((task) => {
+        if (task.id === id) {
+          return {
+            ...task,
+            value: task.editedValue,
+            editing: false,
+            editedValue: '',
+          };
+        }
+        return task;
+      })
+    );
+  };
+
   return (
     <div className='p-10 flex justify-center'>
       <div className='bg-red-100 p-10 rounded-xl'>
@@ -73,6 +135,8 @@ const TodoList: FC = () => {
                 key={key}
                 completeTask={completeTask}
                 handleComplete={handleComplete}
+                handleEdit={handleEdit}
+                handleCancelEdit={handleCancelEdit}
               />
             );
           })}
