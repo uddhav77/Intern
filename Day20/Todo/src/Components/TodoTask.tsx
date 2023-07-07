@@ -128,10 +128,10 @@ const TodoTask = ({ task, completeTask, handleComplete }: Props) => {
           onClick={() => completeTask(task.value)}
           className="flex items-center text-2xl"
         >
-          <AiFillDelete className="text-red-800" />
+          <AiFillDelete className="text-red-700" />
         </button>
         <input type="checkbox" onClick={() => handleComplete(task.id)} className="h-8 w-4"/>
-    
+     
       </div>
     </div>
   );
